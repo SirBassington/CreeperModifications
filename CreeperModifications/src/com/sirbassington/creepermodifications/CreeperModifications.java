@@ -9,7 +9,7 @@ public class CreeperModifications extends JavaPlugin {
 	 * Features of this plugin are determined by the players on the server through a vote process.
 	 * Plugin may branch out into other features or said features may split into their own unique plugins.
 	 * 
-	 * Goal of this plugin is to modify all things creeper - for now
+	 * Goal of this plugin is to modify all things creeper!
 	 */
 	
 	@Override

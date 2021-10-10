@@ -2,14 +2,11 @@ package com.sirbassington.creepermodifications;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.*;
 
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.util.io.BukkitObjectOutputStream;
 
 public class PotionTracker {
 

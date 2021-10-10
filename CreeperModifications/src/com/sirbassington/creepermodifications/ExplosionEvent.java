@@ -15,7 +15,7 @@ public class ExplosionEvent implements Listener {
 	{
 		if (boomEvent.getEntity() instanceof Creeper)
 		{
-			boomEvent.blockList().clear(); //Prevents creepers from destroying blocks; does not affect tile entities
+			boomEvent.blockList().clear(); //Prevents creepers from destroying blocks; does not affect tile entities as they are not blocks
 		}
 	}
 }
