@@ -13,8 +13,6 @@ public class ExplosionEvent implements Listener {
 	@EventHandler
 	public static void onCreeperExplode(EntityExplodeEvent boomEvent)
 	{
-		//Creeper creeper = (Creeper) event.getEntity(); //The entity; creeper
-		
 		if (boomEvent.getEntity() instanceof Creeper)
 		{
 			boomEvent.blockList().clear(); //Prevents creepers from destroying blocks; does not affect tile entities

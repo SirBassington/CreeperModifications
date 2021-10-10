@@ -49,7 +49,7 @@ public class PotionTracker {
 		for (int a = 0; a < amount; a++)
 		{
 			p.getPlayer().addPotionEffect(new PotionEffect(potions.get(rand), 200, 1));
-			potions.remove(rand);
+			potions.remove(rand); //When looping more than once, remove the last potion as to not duplicate potions to pull from
 		}
 	}
 }
