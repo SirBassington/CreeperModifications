@@ -1,0 +1,6 @@
+name: CreeperModifications
+main: com.sirbassington.creepermodifications.CreeperModifications
+author: SirBassington
+version: 0.2.2 Alpha
+api-version: 1.13
+description: "Modifies creepers to no longer destroy blocks as a result of creeper explosion and to cause creeper to emit potion effects during said explosion. Creates potion effects on explosion event for added surprise to caught-off-guard players!"

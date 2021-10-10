@@ -3,8 +3,13 @@ package com.sirbassington.creepermodifications;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.*;
 
+import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
+import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.util.io.BukkitObjectOutputStream;
 
 public class PotionTracker {
 
@@ -13,7 +18,8 @@ public class PotionTracker {
 	 * Used due to some effects from PotionEffectType not needing to be implemented for this feature 
 	 */
 	List<PotionEffectType> potions = new ArrayList<PotionEffectType>();
-	public void potionLister()
+	
+	public void potionSelection(int amount, Player p)
 	{
 		//Negative effect potions
 		potions.add(PotionEffectType.HARM);
@@ -36,25 +42,14 @@ public class PotionTracker {
 		potions.add(PotionEffectType.LEVITATION);
 		potions.add(PotionEffectType.SLOW_FALLING);
 		potions.add(PotionEffectType.NIGHT_VISION);
-	}
-	
-	public void potionSelection(int amount, PotionEffectType spawnFirstPotion, PotionEffectType spawnSecondPotion, PotionEffectType spawnThirdPotion)
-	{
-		if (amount == 1)
+		
+		int rand = ThreadLocalRandom.current().nextInt(potions.size());
+		PotionEffectType potion = null;
+		
+		for (int a = 0; a < amount; a++)
 		{
-			spawnFirstPotion = potions.get(new Random().nextInt(potions.size()));
-		}
-		else
-		{
-			/*
-			 * When more than 1 potion is to be determined, code follows with:
-			 * draw potion, remove drawn potion, draw from remaining potions, and so on.
-			 */
-			spawnFirstPotion = potions.get(new Random().nextInt(potions.size()));
-			potions.remove(spawnFirstPotion);
-			spawnSecondPotion = potions.get(new Random().nextInt(potions.size()));
-			potions.remove(spawnSecondPotion); //Remove 
-			spawnThirdPotion = potions.get(new Random().nextInt(potions.size()));
+			p.getPlayer().addPotionEffect(new PotionEffect(potions.get(rand), 200, 1));
+			potions.remove(rand);
 		}
 	}
 }
