@@ -16,7 +16,7 @@ public class CreeperModifications extends JavaPlugin {
 	public void onEnable()
 	{
 		getServer().getPluginManager().registerEvents(new ExplosionEvent(), this);
-		getServer().getPluginManager().registerEvents(new CreeperPotionEvent(), this);
+		getServer().getPluginManager().registerEvents(new CreeperStatusEffectEvent(), this);
 	}
 	
 	@Override
